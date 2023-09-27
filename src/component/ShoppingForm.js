@@ -7,8 +7,12 @@ export const ShoppingForm = ({addShopping}) => {
 
     const [value, setValue] = useState('');
     const addShoppings = async (shopping) => {
+        const token = localStorage.getItem('jwtToken');
+        const unicode = localStorage.getItem('jwtUnicode');
         const formData = new FormData();
-        formData.append('start', shopping);
+        formData.append('title', shopping);
+        formData.append('unicode', unicode);
+        formData.append('jwt', token);
         axios.post('http://127.0.0.1:8088/tasks/store', formData, {
             headers: {
                 'Content-Type': 'multipart/form-data'

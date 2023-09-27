@@ -124,6 +124,9 @@
       <path value="$PROJECT_DIR$/backend/vendor/ramsey/collection" />
       <path value="$PROJECT_DIR$/backend/vendor/ramsey/uuid" />
       <path value="$PROJECT_DIR$/backend/vendor/vlucas/phpdotenv" />
+      <path value="$PROJECT_DIR$/backendServeno/vendor/firebase/php-jwt" />
+      <path value="$PROJECT_DIR$/backendServeno/vendor/squizlabs/php_codesniffer" />
+      <path value="$PROJECT_DIR$/backendServeno/vendor/composer" />
     </include_path>
   </component>
   <component name="PhpProjectSharedConfiguration" php_language_level="8.1" />

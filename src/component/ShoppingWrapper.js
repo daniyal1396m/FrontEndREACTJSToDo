@@ -1,14 +1,19 @@
 import React, {useEffect, useState} from 'react';
-import {ShoppingForm} from "./ShoppingForm";
 import {v4 as uuidv4} from "uuid";
-import {Shopping} from "./Shopping";
-import {ShoppingFormEdit} from "./ShoppingFormEdit";
 import axios from 'axios';
 import {toast} from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import {ShoppingForm} from "./ShoppingForm";
+import {ShoppingFormEdit} from "./ShoppingFormEdit";
+import {Shopping} from "./Shopping";
 
 uuidv4();
 export const ShoppingWrapper = () => {
+    // const token = localStorage.getItem('jwtToken');
+    // if (!token) {
+    //     window.location.href="/login"
+    // }
+
     const [shoppings, setShoppings] = useState([]);
     const addShopping = value => {
         setShoppings([...shoppings, {
@@ -64,7 +69,6 @@ export const ShoppingWrapper = () => {
     const editTask = (value, id) => {
         setShoppings(shoppings.map(shopping => shopping.id === id ? {
             ...shopping,
-            value,
             isEditing: !shopping.isEditing
         } : shopping))
     }
@@ -87,6 +91,7 @@ export const ShoppingWrapper = () => {
     useEffect(() => {
         fetchTasks();
     }, []);
+
     return (
         <div>
             <ShoppingForm addShopping={addShopping}/>
@@ -100,7 +105,6 @@ export const ShoppingWrapper = () => {
                 )
             ))
             }
-
         </div>
     )
 }

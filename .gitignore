@@ -3,6 +3,7 @@
 # dependencies
 /node_modules
 /backend
+/oldreact
 /backendServeno
 /mvc-boilerplate
 /.pnp
